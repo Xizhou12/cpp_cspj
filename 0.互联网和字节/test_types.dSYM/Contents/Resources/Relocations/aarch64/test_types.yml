@@ -1,0 +1,12 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     "/Users/django/Desktop/桌面 - Xizhou的MacBook Pro/创业/课程/c++ USACO/c++ 互联网和字节/test_types"
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003CEC, symSize: 0x50 }
+  - { offsetInCU: 0x4443, offset: 0x4443, size: 0x8, addend: 0x0, symName: __ZNSt3__14endlB7v160006IcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_, symObjAddr: 0x7C, symBinAddr: 0x100003D68, symSize: 0x58 }
+  - { offsetInCU: 0x4483, offset: 0x4483, size: 0x8, addend: 0x0, symName: __ZNSt3__19use_facetB7v160006INS_5ctypeIcEEEERKT_RKNS_6localeE, symObjAddr: 0x160, symBinAddr: 0x100003E4C, symSize: 0x2C }
+  - { offsetInCU: 0x6D13, offset: 0x6D13, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003CEC, symSize: 0x50 }
+  - { offsetInCU: 0x6DE8, offset: 0x6DE8, size: 0x8, addend: 0x0, symName: __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsB7v160006EPFRS3_S4_E, symObjAddr: 0x50, symBinAddr: 0x100003D3C, symSize: 0x2C }
+  - { offsetInCU: 0x6E1A, offset: 0x6E1A, size: 0x8, addend: 0x0, symName: __ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenB7v160006Ec, symObjAddr: 0xD4, symBinAddr: 0x100003DC0, symSize: 0x8C }
+  - { offsetInCU: 0x6E86, offset: 0x6E86, size: 0x8, addend: 0x0, symName: __ZNKSt3__15ctypeIcE5widenB7v160006Ec, symObjAddr: 0x18C, symBinAddr: 0x100003E78, symSize: 0x38 }
+...
