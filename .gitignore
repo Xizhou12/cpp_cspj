@@ -7,4 +7,5 @@ windows_bin/
 .exe
 .jpeg
 .jpg
-# .vscode/
+.vscode/
+pdf/
