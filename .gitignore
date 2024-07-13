@@ -8,4 +8,6 @@ windows_bin/
 .jpeg
 .jpg
 .vscode/
-pdf/
+课件/
+.dSYM/
+.json
