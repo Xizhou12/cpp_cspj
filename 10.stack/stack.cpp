@@ -30,8 +30,23 @@ bool push(Stack &s, int x) {
     return true;
 }
 
+bool pop(Stack &s, int &x) {
+    if (empty(s)) {
+        return false;
+    }
+    x = s.data[s.top--];
+    return true;
+}
+
+int get_top(Stack s) {
+    if (empty(s)) {
+        return -1;
+    }
+    return s.data[s.top];
+}
+
 int main(){
-    Stack s;
+    Stack s; // 已经初始化了一个栈
     s.data[++s.top] = 1;
     s.data[++s.top] = 2;
     s.data[++s.top] = 3;
@@ -40,3 +55,4 @@ int main(){
     cout << s.data[s.top--] << endl;
     return 0;
 }
+
