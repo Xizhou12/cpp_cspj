@@ -7,4 +7,7 @@ windows_bin/
 .exe
 .jpeg
 .jpg
-# .vscode/
+.vscode/
+课件/
+.dSYM/
+.json
