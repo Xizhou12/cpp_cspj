@@ -11,7 +11,7 @@ struct Student{
     float avg_score;
 
     string toString(){
-        return "他是" + name + " 今年" + to_string(age) + "岁\n";
+        return "他是" + name + ", 今年" + to_string(age) + "岁\n";
     }
 
     // Student(int a, const std::string& n, float avg) 
