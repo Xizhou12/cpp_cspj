@@ -3,16 +3,10 @@
 #include <string>
 
 using namespace std;
-
+//https://en.cppreference.com/w/cpp/container/queue
 struct Customer{
     int id;
     string order;
-
-    Customer(int i, string o){
-        id = i;
-        order = o;
-    }
-    
 };
 
 int main(){

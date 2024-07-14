@@ -20,6 +20,7 @@ void char_array(){
                     'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
                     'W', 'X', 'Y', 'Z'}; // 字符数组
   char test2[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //字符串
+
   for (int i = 0; i < 27; i++){
     printf("%d ", test[i]);
   } // 可以发现最后一个数字是随机的
@@ -124,8 +125,10 @@ void str_utils(){
 
 void str(){
   /*
-  string -> std::string 
   This is c style string
+  char s[10] = "Hello"; // c style string
+  string -> std::string 
+  string s = "Hello"; // c++ style string
   */
   string s; // c++
   // puts(s); // error

@@ -14,10 +14,10 @@ struct Student{
         return "他是" + name + " 今年" + to_string(age) + "岁\n";
     }
 
-    Student(int a, const std::string& n, float avg) 
-        : age(a), name(n), avg_score(avg) {
-        // Constructor logic
-    }
+    // Student(int a, const std::string& n, float avg) 
+    //     : age(a), name(n), avg_score(avg) {
+    //     // Constructor logic
+    // }
 };
 
 
@@ -34,9 +34,14 @@ int main(){
     cout << s.top() << endl;
 
     stack<Student> s2;
-    s2.emplace(25, "xizhou", 100.0);
-    s2.emplace(18, "小陈", 72.5);
+    s2.push(Student{20, "小明", 90.0});
+    s2.push(Student{25, "xizhou", 100.0});
+    s2.push(Student{18, "小陈", 72.5});
     cout << "顶部数据" << s2.top().toString() << endl;
-    cout << s2.size() << endl;
+    
+    // s2.emplace(25, "xizhou", 100.0);
+    // s2.emplace(18, "小陈", 72.5);
+    // cout << "顶部数据" << s2.top().toString() << endl;
+    // cout << s2.size() << endl;
     return 0;
 }
