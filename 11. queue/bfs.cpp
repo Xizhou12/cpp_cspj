@@ -4,14 +4,18 @@
 
 using namespace std;
 
-struct TreeNode{
+struct TreeNode{ // 不是一颗 二叉树
     int val;
-    std::vector<TreeNode*> direct_related_blood;
-
+    std::vector<TreeNode*> direct_related_blood; // 数组
+    // 成员
     TreeNode(int v){
         val = v;
     }
 };
+TreeNode n;
+n.val == p->val
+TreeNode *p;
+
 
 TreeNode * construct_family_tree(){
     TreeNode* you = new TreeNode(0);
@@ -35,13 +39,13 @@ TreeNode * construct_family_tree(){
 }
 
 int main(){
-    TreeNode * root = construct_family_tree();
+    TreeNode * root = construct_family_tree(); //  创建这颗family tree
     queue<TreeNode*> q;
     q.push(root);
 
     while(!q.empty()){
         TreeNode* current = q.front();
-        cout << current->val << endl;
+        cout << current->val << endl; // 遍历过他了
         q.pop();
         for(int i = 0; i < current->direct_related_blood.size(); i++){
             q.push(current->direct_related_blood[i]);

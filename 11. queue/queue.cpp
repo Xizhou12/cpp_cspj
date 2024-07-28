@@ -7,8 +7,9 @@
 const int MAX = 100;
 struct Queue {
     int data[MAX];
-    int head, tail;
+    int head, tail; //头 尾
     // 初始化一个队列
+    // 先进的 先出
     Queue() {
         head = 0;
         tail = 0;
@@ -32,11 +33,10 @@ bool enqueue(Queue &q, int x) {
     return true;
 }
 
-bool dequeue(Queue &q, int &x) {
+bool dequeue(Queue &q) {
     if (empty(q)) {
         return false;
     }
-    x = q.data[q.head];
     q.head = (q.head + 1) % MAX;
     return true;
 }

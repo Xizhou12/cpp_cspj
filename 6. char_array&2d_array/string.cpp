@@ -8,20 +8,19 @@ void char_array(){
   // 字符数组
   /*
   1. 字符串一定是字符数组 但是字符数组不一定是字符串
-  2. 末尾是\0
+  2. 末尾是'\0' null terminator
   */
+
   char s2[5] = {'H', 'e', 'l', 'l', 'o'};
   char s1[6] = {'H', 'e', 'l', 'l', 'o', '\0'};// 字符串 '\n' '\t' 代表了字符串的结尾
   char s[] = "Hello"; // 字符串 它会自动在后面加 \0
-  
-  char s4[6] = {'H', 'e', 'l', 'l', 'o'}; // 
-
+  char s4[6] = {'H', 'e', 'l', 'l', 'o'}; // 字符串
   char test[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
                     'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
                     'W', 'X', 'Y', 'Z'}; // 字符数组
   char test2[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //字符串
 
-  for (int i = 0; i < 27; i++){
+  for (int i = 0; i < 27; i++){ //  \0
     printf("%d ", test[i]);
   } // 可以发现最后一个数字是随机的
   cout << endl;
@@ -32,7 +31,8 @@ void char_array(){
 
 void print_char_array(){
   /*
-    putchar 打印一个字符 和 printf("%c", s[i]);功能一样
+    putchar打印一个字符和printf("%c", s[i]);功能一样 c
+    c++ cout << c;
   */
   char s[] = "Hello";
   for(int i = 0; i < 5; i++){
@@ -44,7 +44,7 @@ void print_char_array(){
   puts(s);         // c的方法 会在最后换行 （\n）
 }
 
-/*cspj 第一轮 70
+/*cspj 第一轮 75
        第二轮 四道编程题  150/400 科技特长生的要求 4小时 体验一下
   noip 中级的水平
   noi 全国奥林匹克竞赛的全国选拔国家训练营
@@ -54,13 +54,14 @@ void read_char_array(){
   int x[] = {1,2,3}; 
 
   char s[10];
+  int y2[100]; // x 地址 指向 数组的第一个元素
   /*
     注意这里s已经是地址了所以不用加&
     scanf 遇到 空格 tab 换行符 输入会结束 
     输入 abc def
     输出 abc
   */
-  scanf("%s", s); 
+  scanf("%s", s); // s 已经是一个地址了
   cout << s << endl;
   
   cin >> s;
@@ -68,9 +69,9 @@ void read_char_array(){
 
   /*
     常用的字符串输入方式
-    遇到空格tab换行均不会结束输入 只有遇到\0才会结束输入
+    遇到空格tab换行均不会结束输入 只有遇到才会结束输入
   */
-  fgets(s, 10, stdin);
+  fgets(s, 10, stdin);// stdin standard input 表示键盘的输入
   cout << s << endl;
 
   /*
@@ -81,7 +82,7 @@ void read_char_array(){
 }
 
 void read_file(){
-  FILE *file;
+  FILE *file; // 文件的一个指针
   char lines[20]; // Buffer to store each line
   file = fopen("example.txt", "r");
   if (file == NULL) {
@@ -101,14 +102,17 @@ void read_file(){
 
 int main(){
   
-  char_array();
-  print_char_array();
-  read_char_array();
+  // char_array();
+  // print_char_array();
+  // read_char_array();
   read_file();
   // str_utils();
   // str();
 }
-
+//c语言  字符串有两种
+// char s[] = "asfsdaf"
+//c++ string
+// 独立的函数
 
 void str_utils(){
   char s[] = "Hello";
