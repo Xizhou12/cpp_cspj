@@ -1,28 +1,46 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-int double_algo(int target, vector<int> v){
-    int low = 0;
-    int high = v.size();
-    while(low + 1 < high){
-        int mid = low + (high - low) / 2;
-        if(v[mid] >= target){
-            high = mid;
+int n = 1000000;
+int a[1000000];//¼ÙÉèaÊÇÒ»¸öÓĞĞòµÄÊı×é
+
+int build_randomized_no_repeat_ordered_a(){
+    // Éú³ÉÒ»¸öËæ»úµÄÓĞĞòÊı×é
+    srand(time(0));
+    a[0] = rand() % 23;
+    for(int i = 1; i < n; i++){
+        a[i] = a[i-1] + rand() % 23 + 1;
+    }
+    return n;
+}
+
+int main(){
+    build_randomized_no_repeat_ordered_a();
+    
+    int lo=0;
+    int inc=1;
+    int target = 975624; // ÎÒÃÇÏëÒªÔÚÊıÁĞaÖĞÕÒµ½µÚÒ»¸ö´óÓÚµÈÓÚ12µÄÊı
+    while(lo + 1 < n)
+    {   
+        if(a[lo+inc]<target){
+            inc<<=1;//³É±¶Ôö³¤£¬Ïàµ±ÓÚinc*=2
         }else{
-            low = mid;
+            if(inc==1)break;//Èç¹ûinc=1£¬ËµÃ÷ÒÑ¾­ÕÒµ½ÁË
+            inc>>=1;//ËõĞ¡·¶Î§
+            lo += inc;
+            inc = 1;
         }
     }
-    return high;
-}
-int main(){
-    vector<int> v;
-    for(int i = 0; i < 1000000; i++){
-        v.push_back(1);
+    
+    cout << a[lo+inc] << ", ÏÂ±êÊÇ" << lo+inc << endl;
+    cout << endl; 
+    // verify ÑéÖ¤
+    cout << "ÑéÖ¤" << endl;
+    for(int i = 0; i < 100000; i++){
+        if(a[i] >= target){
+            cout << a[i] << ", ÏÂ±êÊÇ" << i;
+            break;
+        }
     }
-    for(int i = 2; i < 1000000; i++){
-        v.push_back(i);
-    }
-
-    int target = 987654;// æˆ‘ä»¬æƒ³è¦æ‰¾ç¬¬ä¸€ä¸ªå¤§äºç­‰äº987654çš„æ•°
 }
 
