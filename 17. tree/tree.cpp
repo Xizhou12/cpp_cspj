@@ -10,10 +10,39 @@ struct TreeNode
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-void inorder(TreeNode *root)
+void dfs(TreeNode *root){
+    if(root == NULL){
+        return;
+    }
+    cout<<root->val<<" ";
+    dfs(root->left);
+    dfs(root->right);
+    return;
+}
+
+int main(){
+    TreeNode *x = new TreeNode(1);
+    TreeNode *y = new TreeNode(2);
+    TreeNode *z = new TreeNode(3);
+    TreeNode *a = new TreeNode(4);
+    TreeNode *b = new TreeNode(5);
+    TreeNode *c = new TreeNode(6);
+    TreeNode *d = new TreeNode(7); // éï¿½ é«ï¿½ éå‘­ç“¨é¨å‹ªè¢±ç»‰å¶„ç¬‰éšå²€ç²¨é‹ï¿½ 
+    x->left = y;
+    x->right = z;
+    y->left = a;
+    y->right = b;
+    z->left = c;
+    z->right = d;
+    dfs(x);
+}
+
+
+
+
+void inorder(TreeNode *root, vector<int> &v)
 {
-    if (root == NULL)
-    {
+    if (root == NULL){
         return;
     }
     inorder(root->left);
@@ -23,9 +52,9 @@ void inorder(TreeNode *root)
 
 int main(){
     /*
-        Ê÷µÄ¹¹Ôì
-        1. Ö¸Õë¹¹Ôì
-        2. structÀàĞÍ±¾Éí¹¹Ôì
+        æ ‘çš„æ„é€ 
+        1. æŒ‡é’ˆæ„é€ 
+        2. structç±»å‹æœ¬èº«æ„é€ 
           1
         2   3
       4 5   6 7
@@ -44,7 +73,7 @@ int main(){
     b->right = e;
     c->left = f;
     c->right = g;
-    inorder(a); //ÖĞĞò±éÀú
+    inorder(a); //ä¸­åºéå†
     TreeNode a_ = TreeNode(1);
     TreeNode b_ = TreeNode(2);
     TreeNode c_ = TreeNode(3);
@@ -59,6 +88,6 @@ int main(){
     b_.right = &e_;
     c_.left = &f_;
     c_.right = &g_;
-    inorder(&a_); //ÖĞĞò±éÀú
+    inorder(&a_); //ä¸­åºéå†
     return 0;
 }

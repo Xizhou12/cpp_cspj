@@ -32,34 +32,34 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-int stones[105] = {0};
-int min_combine[105] = {0};
-int prefix_sum[105] = {0};
-int combine(int low, int hi){
-    if (low  == hi){
-        return 0;
-    }
-    int min = 100 * 10000;
-    int score = 0;
-    for (int i = low; i < hi; i++){
-        score += stones[i];
-        int temp = combine(low, i) + combine(i+1, hi);
-        if (temp < min){
-            min = temp;
-        }
-    }
-    return min+score+stones[hi];
-}
+
+const int N = 105;
+int dp[N][N];
+int stones[N];
+int prefix_sum[N]; // 前缀和
 
 int main(){
-    int n;
-    cin >> n;
-    int sum = 0;
-    for (int i = 0; i < n; i++){
-        cin >> stones[i];
-        prefix_sum[i] = sum+stones[i];
-        sum+=stones[i];
-    }
-    cout << combine() << endl;
-} 
+  int n;
+  cin >> n; //有n堆石头吧
+  int sum = 0; // 当前总和
+  for(int i = 1; i <= n; i++){
+    cin >> stones[i];
+    sum += stones[i];
+    prefix_sum[i] = sum;
+  }
+  for(int i = 0; i <= n+1; i++){
+    dp[i][i] = 0; // 从第i堆合并到第i堆事不需要合并的
+  } 
 
+  for(int i = n; i >= 1; i--){
+    for(int j = i+1; j <= n; j++){
+      dp[i][j] = 10000000; //
+      for(int k = i; k < j; k++){
+        // 这个是当前k值的最优解
+        int cur_perfect_score = dp[i][k] + dp[k+1][j] + prefix_sum[j] - prefix_sum[i-1];
+        dp[i][j] = min(dp[i][j], cur_perfect_score);
+      }
+    }
+  }
+  cout << dp[1][n];
+}
