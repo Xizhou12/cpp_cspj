@@ -36,7 +36,7 @@ int main(){
         // Check if ip is valid
         if(check_ip(addr) == 0){
             cout << "ERR" << endl;
-            return 0;
+            continue;
         }
         if (op == "Server"){
             if(server.find(addr) == server.end()){
