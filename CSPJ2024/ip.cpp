@@ -3,24 +3,26 @@
 using namespace std;
 
 bool check_ip(string addr){
-    int dot_count=0;
+    int dot_count=0, colon_count =0, ip_grp;
     string temp = "";
     for(char c: addr){
         if(c == '.'){
             dot_count++;
-            if(dot_count > 3){
-                return false;
-            }
         }else if(c == ':'){
             if(dot_count < 3){
                 return false;
             }
+            colon_count++;
         }
         if(c == '.' || c == ':'){
             if (temp.size() > 1 && temp[0] == '0'){
                 return 0;
             }
-            int ip_grp = stoi(temp); //string -> int
+            if (temp.size() != 0 && temp.size() <= 5) 
+                ip_grp = stoi(temp); //string -> int
+            else{
+                return 0;
+            }
             if(ip_grp > 255 || ip_grp < 0){
                 return 0;
             }
@@ -33,14 +35,22 @@ bool check_ip(string addr){
     if (temp.size() > 1 && temp[0] == '0'){
         return 0;
     }
-    int ip_grp = stoi(temp);
+    if (temp.size() != 0 && temp.size() <= 5) 
+        ip_grp = stoi(temp); //string -> int
+    else{
+        return 0;
+    }
     if(ip_grp > 65535 || ip_grp < 0){
         return 0;
     }
-    
+    if(dot_count != 3 || colon_count != 1){
+        return false;
+    }
     return 1;
 }
 int main(){
+    freopen("ip.in","r",stdin);//r=read
+	freopen("ip.out","w",stdout);//w=write
     int n;
     string op, addr;
     map<string, int> server; // Valid Server with number of connecting clients
@@ -71,6 +81,8 @@ int main(){
             }
         }
     }
+    fclose(stdin);
+	fclose(stdout);
     return 0;
 }
 
