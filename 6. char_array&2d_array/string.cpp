@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstring>
 #include <string>
-
+#include <algorithm>
 using namespace std;
 void char_array(){
   // 字符数组

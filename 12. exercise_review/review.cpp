@@ -20,7 +20,8 @@ int main(){
     cin.getline(s, 100);   // 可以用于c++的string
 
     string s2;
-    cin.getline(s2.data(), 100);
+    getline(cin, s2);
+
 
     // 各个输入的返回值
     int n, m, k;
