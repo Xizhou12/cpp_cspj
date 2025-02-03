@@ -1,75 +1,97 @@
-#include <stdio.h>
-#include <iostream>
-#include <iomanip>
+#include <bits/stdc++.h>
 
 using namespace std;
-int compare(int x, int y){
-    // return 0 / 1
-    return x > y;
-};
+// int compare(int x, int y){
 
-struct Person{
-    int age;
-    double score;
-};
+// };
+
 int main() {
-    // int x[10];
-    int x[10] = {2,1,3,4,6,7,8,9,10,5};
-    // int x[] = {1,2,3,4,5,6,7,8,9,10};
-    // int x[10] = {1,2,3};
-    // int x[10] = {0};
+    // char s[20];
+    // char s1[20] = {'a', 'b', 'c', 'd', 'e'}; //自动把0补齐
+    // char s2[6] = "abcde";
+    // char s3[] = "abcde";
+    // char s4[5] = {'a', 'b', 'c', 'd', '\0'};
 
-    // 写入
-    // for(int i =0; i < 10; i++){
-    //     cin >> x[i];
-    // }
+    int x[20] = {1,2,3};// 他会自动把0补齐
+    /*
+        字符串和普通字符数组的区别
+        他的结尾有一个 \0 NULL terminator 字符 对应了ascii里的第一个字符 0
+        Hello \0 \n \t
+    */
 
-    // for(int i =0; i < 10; i++){ // i 代表的是下标
-    //     cout << x[i] << endl;
-    // }
-
-    // for(int i : x){ // i 代表的是x数组里的数字
-    //     cout << i << endl;
-    // }
-
-    //sizeof
-    cout << sizeof(x) << endl; // 40 = 4 * 10
-    cout << sizeof(x) / sizeof(x[0]) << endl;
-    cout << sizeof(x) / sizeof(int) << endl;
-
-    cout << x << endl; // 0x30c6d6dd0
-    cout << &x[0] << endl; // 数组的地址 = 数组里的第一个数字的地址
+    // char s[] = "abcde"; //如果是字符串的话 我们是不需要用for循环来读
+    
+    // cout << s << endl;
+    // printf("%s\n", s);
+    // puts(s); //自动加回车的一个专门用来读字符串的方法
 
     /*
-        变量变成地址 &
-        地址变成变量 *
+        cin, scanf: 如果遇到空格 换行还有tab的时候都会自动停止
+        fgets \n
     */
    
-    sort(x, x+10, compare);
-    int * p;
-    for( p=x; p < x+10; p++){
-        cout << *p << endl;
+    char s1[20];
+//    cin >> s1;
+//    cout << s1 << endl;
+    scanf("%s", s1); // 取地址
+    cout << s1 << endl;
+
+    // (char *)
+    fgets(s1, 20, stdin); // 读取一行
+    cin.getline(s1, 20);  // 读取一行
+
+    string s;
+    getline(cin, s);      //读取一行
+
+    /*
+        EOF end of line
+        cin, scanf, fgets
+        cin >> n
+        int n;
+        scanf("%s", &n); 
+        int x = scanf("%d %s %f", &n, s, &f); 3
+            1. 读取成功的时候返回的是成功读取的个数
+            2. 读取失败了返回的是-1
+            3. 没有东西让我读取返回的就是EOF
+        cin 的返回值 0，1 false true
+    */
+    int n;
+    if(scanf("%d", &n) != EOF){
+        cout << n << endl;
     }
+    int x=3,y=4;
+    
+    char s2[20] = "abcde";
+    string s;
+    /*
+        char *: strcmp(s1, s2) == 0
+        string: > < == !=
+        sort()
 
-    // int x[3][3];
-    // int x[3][3] = {1,2,3,4,5,6,7,8,9};
-    // int x[3][3] = { {1,2,3}, {4,5,6}, {7,8,9}};
-    int y[2][3] = {1,2,3,4,5,6};
-    // for(int i = 0; i < 2; i ++){
-    //     for(int j = 0; j < 3; j++){
-    //         cout << y[i][j];
-    //     }
-    // }
+        char *: strlen(s)
+        string: s.size()
 
-    cout << y << endl;       //数组的地址
-    cout << y[0] << endl;    //数组第1行的地址
-    cout << &y[0][0] << endl;
+        string: s1 + s2
 
-    cout << y + 1 << endl;   // +3个数
-    cout << y[0] + 1 << endl;
-
-
-
-
+        string s = "abcde";
+        char s2[20] = "ghijk";
+        
+    */
+   string str[25];//字符串数组
+   int n;
+   cin >> n;
+   for(int i = 0; i < n; i++){
+         cin.getline(str[i], 100);
+   }
+   /*
+    sort 如果是只给两个参数的话 只能作用于string 因为string 可以用 > < == !=进行比较而char *不行
+   */
+   sort(str, str + n);
+    for(int i = 0; i < n; i++){
+         cout << str[i] << endl;
+    }
+    return 0;
 }
+    
+
 //dazikukuw.com
