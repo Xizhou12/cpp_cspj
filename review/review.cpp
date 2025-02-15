@@ -1,20 +1,14 @@
-#include <stdio.h>
-#include <iostream>
-#include <iomanip>
+
+#include <bits/stdc++.h>
 
 using namespace std;
 
-
+template <typename T>
+int max3(T a, T b, T c) {
+    return max(a, max(b, c));
+}
 int main() {
-    int a = 7, b = 5, c = 3, d = 1;
-    
-    // a | b ^ c & d
-    int result1 = a | b ^ c & d;
-    // a | (b ^ (c & d))
-    int result2 = a | (b ^ (c & d));
-    
-    cout << "result1: " << result1 << endl;
-    cout << "result2: " << result2 << endl;
-
-    return 0;
+    int a,b,c;
+    cin >> a >> b >> c;
+    cout << fixed << setprecision(3) << float (max3(a,b,c)) / (max3(a+b,b,c)*max3(a,b,b+c)) << endl;
 }

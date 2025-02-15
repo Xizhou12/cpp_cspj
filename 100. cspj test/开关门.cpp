@@ -42,7 +42,6 @@ int open_rooms(){
       cout << i << " ";
     }
   }
-
   return 0;
 }
 

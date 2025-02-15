@@ -10,11 +10,12 @@
 	- K进制转十进制
 		125（七进制） 转 十进制
 
-	-  111101001.10111 是某个带小数的二进制 请写出它的十六进制
+	-  111101001.10111 是某个带小数的二进制 请写出它的十六进制 (提示4个比特为一组进行16进制的转换)
 
 	- 【NOIP2010】 如果某个进制下等式 7*7 = 41 成立，那么该进制下 12*12=？
 
 	- 二进制运算符 ~ (>> <<) & ^ |
+		取反 左移 右移 与 异或 或 优先级顺序从左到右
 
 		~3
 
@@ -28,26 +29,34 @@
 		
 		(5 ^ 11) >> 2 | 3 & 2
 
+		^异或 条件关系
+		x   y   x ^ y
+		0   0     0
+		1   0     1
+		0   1     1
+		1   1     0
+
 
 
 3. 基本类型 精度大小*
-	- short, int, unsigned int, long long int, char, float, double
+	- short, int, unsigned int, long long int, char, float, double, bool
+	
 	unsigned short的最大值是多少
 
-	- notations
+
 
 4. 输入输出
 	两种输入输出都要掌握
-	1. c语言自带的
+	c语言自带的 c++ 
 
-	2. c++
+	1024：保留3位小数的浮点数(课后作业)
+	
 
 
-5. 类型转换 强制类型转换
+5. 类型转换 强制类型转换 (下节课讲)
 
 6. 算术运算符
-		输入一个三位数
-		分别打印它的个位 十位 和百位 这三个数字
+		1031：反向输出一个三位数(课后作业)
 
 ____________________________________________
 
@@ -56,11 +65,19 @@ ____________________________________________
 
 
 答案：
-1. 6*5！*3！
-2. 120
-3. 254
-4. 68
-5. F41.17
-6. 144
-7. -4 7 0 6 13 3
-8. 65535
+排列组合
+	6*5！*3！
+	120
+二进制
+	254
+	68
+	1E9.B8
+	144
+二进制运算符练习
+	-4 7 0 6 13 3
+unsigned short的最大值
+	65535
+
+课后作业 信奥一本通 1024 & 1031
+
+python3 /titan_data/lite_titan/titan_desk/lite_scripts/prod_strategy_lite/generate_strategy.py -project cosmic -exch EUREX -date `TZ="America/Chicago" date '+\%Y\%m\%d' -d "tomorrow"` -cfg_dir /titan_data/lite_titan/cosmic/prod_strats/ -log_level INFO -log_file /titan_data/lite_titan/temp_delete/cosmic/EUREX/generate_strategy.log -channel eurex lite-ops

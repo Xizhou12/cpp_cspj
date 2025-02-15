@@ -1,32 +1,43 @@
-#include <iostream>
-#include <queue>
-#include <string>
+#include <bits/stdc++.h>
 
 
-/*
-    常用处理输入总结：
-    cin.getline(cpp_s, 100) 读取一行字符串           // -> string s; 
-    fgets(c_s, 100, stdin) 读取一行字符串        // -> char c_s[100];
-    cin >> s 读取一个字符串 遇到tab space 就结束, scanf("%s", s) 读取字符串 非整行 遇到tab space 就结束 完全一样的作用 cin用起来更方便除非有特殊格式要求
-    "I am a student"
-    scanf("%d", &n) 读取一个整数
-    
-    对于不知道有多少个输入的情况，可以用while(cin.getline(c_s, 100)) 或者 while(fgets(c_s, 100, stdin))
-*/
+
 using namespace std;
 int main(){
+    // 字符数组
+    /*
+        1. 字符串一定是字符数组 但是字符数组不一定是字符串
+        2. 末尾是'\0' null terminator
+    */
+
+    char s2[5] = {'H', 'e', 'l', 'l', 'o'};       // 字符数组
+    char s1[6] = {'H', 'e', 'l', 'l', 'o', '\0'}; // 字符串 '\n' '\t' 代表了字符串的结尾
+    char s[] = "Hello";                           // 字符串 它会自动在后面加 \0
+    char s4[6] = {'H', 'e', 'l', 'l', 'o'};       // 字符串
+    char test[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
+                        'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+                        'W', 'X', 'Y', 'Z'};      // 字符数组
+    char test2[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  //字符串
     char s[100];
+
+
+    /*
+        常用处理输入总结：
+        cin >> s scanf("%s", s) 读取一个字符串 遇到tab space 就结束读取
+        "I am a student" >> I
+        下面是整行读取的方法
+    */
     fgets(s, 100, stdin);  // 只能用于c的字符数组/字符串
-    cin.getline(s, 100);   // 可以用于c++的string
+    cin.getline(s, 100);   
 
     string s2;
-    cin.getline(s2.data(), 100);
+    // getline(cin, s2);
+
 
     // 各个输入的返回值
     int n, m, k;
     int x = scanf("%d", &n); // 返回值是读取的个数, 读取失败返回-1 (EOF)
     int x2 = scanf("%d %d %d", &n, &m, &k); // 如果成功读取两个数字，并未成功读取第三个数字返回2
-
     /*
         int x; 读取字符串 scanf("%s", &x); 会报错
         什么是EOF = end of file
