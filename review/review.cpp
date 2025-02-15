@@ -59,10 +59,9 @@ int main() {
     if(scanf("%d", &n) != EOF){
         cout << n << endl;
     }
-    int x=3,y=4;
     
     char s2[20] = "abcde";
-    string s;
+
     /*
         char *: strcmp(s1, s2) == 0
         string: > < == !=
@@ -78,10 +77,9 @@ int main() {
         
     */
    string str[25];//字符串数组
-   int n;
    cin >> n;
    for(int i = 0; i < n; i++){
-         cin.getline(str[i], 100);
+         getline(cin, str[i]);
    }
    /*
     sort 如果是只给两个参数的话 只能作用于string 因为string 可以用 > < == !=进行比较而char *不行
