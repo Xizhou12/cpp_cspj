@@ -43,11 +43,8 @@
 	
 	unsigned short的最大值是多少
 
-<<<<<<< HEAD
-=======
 	- notations
 	int x = 0;
->>>>>>> f7aa39781ec3a642be637f2f30158291521358a2
 
 
 4. 输入输出
