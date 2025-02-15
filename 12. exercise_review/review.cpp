@@ -31,7 +31,11 @@ int main(){
     cin.getline(s, 100);   
 
     string s2;
+<<<<<<< HEAD
     // getline(cin, s2);
+=======
+    getline(cin, s2);
+>>>>>>> f7aa39781ec3a642be637f2f30158291521358a2
 
 
     // 各个输入的返回值
