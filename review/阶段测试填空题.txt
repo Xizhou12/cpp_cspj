@@ -1,0 +1,83 @@
+20250222 考试
+
+二进制和运算符
+
+1. 
+    a. 126转八进制
+    b. 111101001.10111 是某个带小数的二进制 请写出它的十六进制
+
+2. 运算符计算 
+	a. 5 ^ 3 
+	b. 8 & 6
+	c. ~5
+	d. (5 ^ 11) >> 2
+
+3. 计算 unsigned short的最大值是多少
+
+4. 循环
+int main() {
+    int i;
+    for( i = 0; i <= 5; ++i){
+        cout << i << " ";
+    }
+    // a. 请写出上面for循环的输出
+    cout << i << endl; 
+    // b. 写出现在i的值
+    for(int j = 0; j <= 10; j+=2){
+        cout << j << " ";
+    }
+    // c. 请写出上面for循环的输出
+    cout << j << endl;
+    // d. 请写出现在j的值
+}
+ 
+int main() {
+    for(int i=0; i < 100; i++){
+    	if(i % 3 == 0){
+    		continue;
+    	}
+    	if(i >= 20){
+    		break;
+    	}
+    	cout << i << " ";
+    }
+    // e. 请写出上面循环的输出
+    // f. 如果把break换成return会改变结果么，请说明理由
+}
+
+5. 字符串
+int main() {
+    string s = "Hello, world";
+    auto x = s.substr(4,4);
+    auto y = isupper(s[0]);
+    auto z = isalpha(s[0]);
+    auto a = toupper(s[0]);
+    auto b = atoi("123");
+    cout << x << " " << y << " " << z << " " << a << " " << b << endl;
+    // 写出 x,y,z,a,b分别是什么
+}
+
+6. 函数
+int x = 3;
+int y = 4;
+
+void print(){
+	cout << x << " " << y << endl;
+}
+
+int add(int& x, int& y){
+	x = 10;
+	y = 100;
+	return x + y;
+}
+
+int main(){
+	x = 1;
+	int y = 2;
+	print();
+	// a. 请写出上述函数打印的内容
+	cout << add(x, y) << endl;
+	// b. 请写出上述函数输出的内容
+	print();
+	// c. 请写出上述函数打印的内容
+}

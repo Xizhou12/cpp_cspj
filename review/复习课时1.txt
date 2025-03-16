@@ -67,7 +67,6 @@ ____________________________________________
 
 
 答案：
-<<<<<<< HEAD
 排列组合
 	6*5！*3！
 	120
@@ -84,13 +83,3 @@ unsigned short的最大值
 课后作业 信奥一本通 1024 & 1031
 
 python3 /titan_data/lite_titan/titan_desk/lite_scripts/prod_strategy_lite/generate_strategy.py -project cosmic -exch EUREX -date `TZ="America/Chicago" date '+\%Y\%m\%d' -d "tomorrow"` -cfg_dir /titan_data/lite_titan/cosmic/prod_strats/ -log_level INFO -log_file /titan_data/lite_titan/temp_delete/cosmic/EUREX/generate_strategy.log -channel eurex lite-ops
-=======
-1. 6*5！*3！
-2. 120
-3. 254
-4. 68
-5. 1E9.B8
-6. 144
-7. -4 7 0 6 13 3
-8. 65535
->>>>>>> f7aa39781ec3a642be637f2f30158291521358a2
